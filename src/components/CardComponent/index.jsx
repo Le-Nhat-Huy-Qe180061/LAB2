@@ -6,16 +6,16 @@ import './CardComponent.scss'
 
 const index = ({ arrCardProduct = [] }) => {
 
-    console.log(arrCardProduct);
+    // console.log(arrCardProduct);
 
     return (
         <div className='menu__product'>
             <Row>
                 {arrCardProduct.map((item, index) => (
-                    <Col span={6}>
-                        <div key={index} className="menu__product-card" style={{ width: '18rem' }}>
+                    <Col span={6} key={index}>
+                        <div  className="menu__product-card" style={{ width: '18rem' }}>
 
-                            <img src={item.image} class="card-img-top" alt="ảnh" />
+                            <img src={item.image} className="card-img-top" alt="ảnh" />
                             
                             <div className='menu__product-sell'>
                                 SALE
