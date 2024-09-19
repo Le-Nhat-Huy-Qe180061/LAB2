@@ -1,6 +1,5 @@
 import React from 'react';
 import { Carousel, ConfigProvider } from 'antd';
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import './SliderComponent.scss'; // Ensure this file exists for custom styles
 
 const CarouselComponent = ({ arrImage = [] }) => {
@@ -73,10 +72,6 @@ const CarouselComponent = ({ arrImage = [] }) => {
                 ))}
             </Carousel>
         </ConfigProvider>
-
-
-
-
     );
 };
 
