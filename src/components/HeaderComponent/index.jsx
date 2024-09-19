@@ -10,7 +10,7 @@ import ButtonInputSearch from '../ButtonInputSearch/ButtonInputSearch';
 const index = () => {
     return (
         <>
-            <Row gutter={[10, 20]} className='layout-default__header'>
+            <Row className='layout-default__header'>
                 <Col span={5} className='layout-default__header-text'>
                     <Link to={"/"}>Pizza House</Link>
                 </Col>
@@ -27,7 +27,6 @@ const index = () => {
                         placeholder='Search'
                     />
                 </Col>
-
             </Row>
         </>
     )

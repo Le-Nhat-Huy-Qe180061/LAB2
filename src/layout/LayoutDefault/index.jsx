@@ -9,6 +9,8 @@ import { Outlet } from 'react-router-dom';
 
 
 const index = () => {
+
+   
     return (
         <div className='layout-default'>
            <HeaderCompomemt />
@@ -16,6 +18,8 @@ const index = () => {
            <main className='layout-default__main'>
                 <Outlet></Outlet>
            </main>
+
+
         </div>
     )
 }
