@@ -8,7 +8,7 @@ function App() {
     <>
       <AllRoute />
     </>
-  );
+  )
 }
 
 export default App;
