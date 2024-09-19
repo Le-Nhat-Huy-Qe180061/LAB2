@@ -8,6 +8,9 @@ import slider4 from "../../assets/Images/pizza4.jpg";
 import slider5 from "../../assets/Images/pizza5.jpg";
 
 import cardProduct1 from "../../assets/Images/menu1.jpg";
+import cardProduct2 from "../../assets/Images/menu2.jpg";
+import cardProduct3 from "../../assets/Images/menu3.jpg";
+import cardProduct4 from "../../assets/Images/menu4.jpg";
 import './Home.scss';
 
 const index = () => {
@@ -40,13 +43,33 @@ const index = () => {
         },
     ];
 
-    // const cardProduct = [
-    //     {
-    //         image: cardProduct1,
-    //         title: 'Marvhenta',
-    //         description: 'If you are looking for traditional Italian pizza, the Neapolitan is the best option!',
-    //     },
-    // ]
+    const cardProduct = [
+        {
+            image: cardProduct1,
+            title: 'Margherita Pizaa',
+            priceOld: '$40.00',
+            priceNew: '$24.00'
+        },
+        {
+            image: cardProduct2,
+            title: 'Mushroom Pizaa',
+            priceOld: "",
+            priceNew: '$25.00'
+        },
+        {
+            image: cardProduct3,
+            title: 'Hawaiian Pizza',
+            priceOld: '',
+            priceNew: '$24.00'
+        },
+        {
+            image: cardProduct4,
+            title: 'Pesto Pizza',
+            priceOld: '$40.00',
+            priceNew: '$30.00'
+        },
+        
+    ]
 
 
     return (
@@ -56,7 +79,7 @@ const index = () => {
                 <div className='container'>
                     <div className='menu'>
                         <h2 className='menu__title'>Our Menu</h2>
-                        <CardComponent />
+                        <CardComponent arrCardProduct={cardProduct}/>
                     </div>
                 </div>
             </div>

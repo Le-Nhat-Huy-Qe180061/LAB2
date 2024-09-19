@@ -1,0 +1,16 @@
+
+
+.card-img-top{
+    position: relative;
+}
+
+.menu__product{
+
+    &-sell{
+        position: absolute;
+        color: black;
+        background-color: #FFFC05;
+        font-weight: 600;
+        padding: 5px 35px;
+    }
+}

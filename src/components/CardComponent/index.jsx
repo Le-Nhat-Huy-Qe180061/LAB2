@@ -1,37 +1,50 @@
-import React from 'react'
+import React from 'react';
+import { Col, Row } from 'antd';
 import { WrapperDiscountText, WrapperPriceOld } from './style'
 import ButtonComponent from '../ButtonComponent/ButtonComponent'
+import './CardComponent.scss'
 
+const index = ({ arrCardProduct = [] }) => {
 
-import cardProduct1 from "../../assets/Images/menu1.jpg";
+    console.log(arrCardProduct);
 
-
-const index = () => {
     return (
         <div className='menu__product'>
-            <div className="menu__product-card" style={{ width: '18rem' }}>
-                <img src={cardProduct1} class="card-img-top" alt="ảnh" />
-                <div className="menu__product-card">
-                    <div className='menu__product-card-item'>
-                        <h5 className="card-title">Card title</h5>
-                        <div className='card-price'>
-                            <WrapperPriceOld> $40.00 </WrapperPriceOld>
-                            <WrapperDiscountText>$24.00</WrapperDiscountText>
+            <Row>
+                {arrCardProduct.map((item, index) => (
+                    <Col span={6}>
+                        <div key={index} className="menu__product-card" style={{ width: '18rem' }}>
+
+                            <img src={item.image} class="card-img-top" alt="ảnh" />
+                            
+                            <div className='menu__product-sell'>
+                                SALE
+                            </div>
+
+                            <div className="menu__product-card">
+                                <div className='menu__product-card-item'>
+                                    <h5 className="card-title">{item.title}</h5>
+                                    <div className='card-price'>
+                                        <WrapperPriceOld> {item.priceOld} </WrapperPriceOld>
+                                        <WrapperDiscountText>{item.priceNew}</WrapperDiscountText>
+                                    </div>
+                                    <ButtonComponent
+                                        textButton={"Buy"}
+                                        styleButton={{
+                                            background: '#353A40',
+                                            padding: '10px 15px',
+                                            color: 'white',
+                                            fontWeight: '600',
+                                            width: '100%',
+                                        }}
+                                        size={"large"}
+                                    />
+                                </div>
+                            </div>
                         </div>
-                        <ButtonComponent
-                            textButton={"Buy"}
-                            styleButton={{
-                                background: 'grey',
-                                padding: '10px 15px',
-                                color: 'white',
-                                fontWeight: '600',
-                                width: '100%',
-                            }}
-                            size={"large"}
-                        />
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                ))}
+            </Row>
         </div>
     )
 }
