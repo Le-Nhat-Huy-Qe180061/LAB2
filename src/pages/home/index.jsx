@@ -1,6 +1,7 @@
 import React from 'react'
 import SliderComponents from '../../components/SliderComponent';
 import CardComponent from '../../components/CardComponent';
+
 import slider1 from "../../assets/Images/pizza1.jpg";
 import slider2 from "../../assets/Images/pizza2.jpg";
 import slider3 from "../../assets/Images/pizza3.jpg";
@@ -12,6 +13,7 @@ import cardProduct2 from "../../assets/Images/menu2.jpg";
 import cardProduct3 from "../../assets/Images/menu3.jpg";
 import cardProduct4 from "../../assets/Images/menu4.jpg";
 import './Home.scss';
+import BookInput from '../../components/BookInput/BookInput';
 
 const index = () => {
 
@@ -80,6 +82,10 @@ const index = () => {
                     <div className='menu'>
                         <h2 className='menu__title'>Our Menu</h2>
                         <CardComponent arrCardProduct={cardProduct}/>
+                    </div>
+
+                    <div className='book__table'>
+                        <BookInput />
                     </div>
                 </div>
             </div>

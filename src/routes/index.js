@@ -1,6 +1,7 @@
 
 
 import LayoutDefault from "../layout/LayoutDefault";
+import Error404 from "../pages/Error404";
 import Home from "../pages/home";
 
 export const routes = [
@@ -11,7 +12,11 @@ export const routes = [
             {
                 path: "/",
                 element: <Home />
-            }
+            },
+            {
+                path: "*",
+                element: <Error404 />
+            },
         ]
     }
 ]

@@ -11,7 +11,7 @@ function AllRoute() {
 
     return(
         <>
-            {element};
+            {element}
         </>
     )
 }

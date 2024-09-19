@@ -9,6 +9,7 @@ const ButtonComponent = ({size, styleButton, styleTextButton  ,textButton ,...re
                 size={size}
                 style={styleButton}
                 {...rests}
+                
             >
                 {/* <span style={styleTextButton}> {textButton}</span> */}
                 {textButton}
