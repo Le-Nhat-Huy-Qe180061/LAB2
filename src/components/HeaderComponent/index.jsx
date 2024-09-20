@@ -12,13 +12,13 @@ const index = () => {
         <>
             <Row className='layout-default__header'>
                 <Col span={5} className='layout-default__header-text'>
-                    <Link to={"/"}>Pizza House</Link>
+                    <Link to={"*"}>Pizza House</Link>
                 </Col>
 
                 <Col span={5} className='layout-default__header-content'>
                     <Link to={'/'}>Home</Link>
                     <Link to={'/'}>About Us</Link>
-                    <Link to='/'>Contact</Link>
+                    <Link to={'/'}>Contact</Link>
                 </Col>
 
                 <Col span={14} className="layout-default__header-search">
