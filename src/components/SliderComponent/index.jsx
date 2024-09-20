@@ -58,6 +58,7 @@ const CarouselComponent = ({ arrImage = [] }) => {
                 // prevArrow={<LeftOutlined className="custom-arrow-prev" />}
                 // nextArrow={<RightOutlined className="custom-arrow-next" />}
                 autoplay
+                autoplaySpeed={2000}
             >
                 {arrImage.map((item, index) => (
                     <div key={index}>
