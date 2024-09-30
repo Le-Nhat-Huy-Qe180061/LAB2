@@ -1,8 +1,9 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom';
-import { Col, Row } from 'antd';
+import { Col, Row, Badge, Space } from 'antd';
 import ButtonInputSearch from '../ButtonInputSearch/ButtonInputSearch';
+import CartComponent from '../CartComponent/CartComponent';
 
 
 
@@ -21,11 +22,15 @@ const index = () => {
                     <Link to={'/'}>Contact</Link>
                 </Col>
 
-                <Col span={14} className="layout-default__header-search">
+                <Col span={12} className="layout-default__header-search">
                     <ButtonInputSearch
                         size='large'
                         placeholder='Search'
                     />
+                </Col>
+
+                <Col span={2} className='layout-default__header-cart'>
+                    <CartComponent />
                 </Col>
             </Row>
         </>

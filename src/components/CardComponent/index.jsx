@@ -3,33 +3,9 @@ import { Col, Row, Skeleton } from 'antd';
 import { WrapperDiscountText, WrapperPriceOld } from './style';
 import ButtonComponent from '../ButtonComponent/ButtonComponent';
 import './CardComponent.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import ProductItem from './ProductItem';
 
-const ProductCard = ({ item }) => (
-    <div className="menu__product-card" style={{ width: '18rem' }}>
-        <img src={item.image} className="card-img-top" alt="ảnh" />
-        <div className='menu__product-sell'>SALE</div>
-        <div className="menu__product-card">
-            <div className='menu__product-card-item'>
-                <h5 className="card-title">{item.title}</h5>
-                <div className='card-price'>
-                    <WrapperPriceOld>{item.priceOld}</WrapperPriceOld>
-                    <WrapperDiscountText>{item.priceNew}</WrapperDiscountText>
-                </div>
-                <ButtonComponent
-                    textButton="Buy"
-                    styleButton={{
-                        background: '#353A40',
-                        padding: '10px 15px',
-                        color: 'white',
-                        fontWeight: '600',
-                        width: '100%',
-                    }}
-                    size="large"
-                />
-            </div>
-        </div>
-    </div>
-);
 
 const ProductCardSkeleton = () => (
     <div className="menu__product-card" style={{ width: '18rem' }}>
@@ -38,25 +14,55 @@ const ProductCardSkeleton = () => (
     </div>
 );
 
-const ProductList = ({ arrCardProduct = [] }) => {
+const ProductList = () => {
     const [loading, setLoading] = useState(true);
+    const [data, setData] = useState([]);
 
+
+
+
+    // Fetch products data from the API on component mount
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 300);
+        const fetchProducts = async () => {
+            try {
+                setLoading(true); // Set loading state to true before fetching data
+                const response = await fetch('https://dummyjson.com/products');
+                const result = await response.json();
 
-        return () => clearTimeout(timer);
+                // Format the fetched data to match the required structure
+                const formattedData = result.products.map((product) => ({
+                    key: product.id,
+                    image: product.thumbnail,
+                    title: product.title,
+                    priceOld: `$${(product.price * 1.2).toFixed(2)}`, // Example calculation for old price
+                    priceNew: `$${product.price.toFixed(2)}`,
+                }));
+
+                setData(formattedData); // Set the fetched and formatted data
+            } catch (error) {
+                console.error("Failed to fetch products:", error);
+            } finally {
+                setLoading(false); // Set loading state to false after fetching data
+            }
+        };
+
+        fetchProducts();
     }, []);
+
+    console.log(data);
 
     return (
         <div className='menu__product'>
-            <Row>
-                {arrCardProduct.map((item, index) => (
-                    <Col span={6} key={index}>
-                        {loading ? <ProductCardSkeleton /> : <ProductCard item={item} />}
-                    </Col>
-                ))}
+            <Row gutter={[16, 16]}>
+                {loading
+                    ? Array.from({ length: 8 }).map((_, index) => (
+                        <Col span={6} key={index}>
+                            <ProductCardSkeleton />
+                        </Col>
+                    ))
+                    : data.map((item, index) => (
+                      <ProductItem key={item.id} item={item}/>
+                    ))}
             </Row>
         </div>
     );

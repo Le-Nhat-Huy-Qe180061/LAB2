@@ -33,5 +33,26 @@
     &-search {
       text-align: center;
     }
+
+    &-cart{
+      color: white;
+      font-size: 30px;
+    }
+
+    &-cartIcone{
+      position: relative;
+    }
+
+    &-cartQuantity{
+      position: absolute;
+      top: 0px;
+      left: 17px;
+      font-size: 12px;
+      background: #fff;
+      color: red;
+      border-radius: 15px;
+      padding: 0px 10px;
+      font-weight: 600;
+    }
   }
 }

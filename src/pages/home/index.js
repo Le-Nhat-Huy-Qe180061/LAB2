@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SliderComponents from '../../components/SliderComponent';
 import CardComponent from '../../components/CardComponent';
 
@@ -74,6 +74,8 @@ const index = () => {
     ]
 
 
+
+
     return (
         <>
             <SliderComponents arrImage={pizzaImages} />
@@ -81,7 +83,7 @@ const index = () => {
                 <div className='container'>
                     <div className='menu'>
                         <h2 className='menu__title'>Our Menu</h2>
-                        <CardComponent arrCardProduct={cardProduct}/>
+                        <CardComponent/>
                     </div>
 
                     <div className='book__table'>
