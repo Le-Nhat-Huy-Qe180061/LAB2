@@ -14,6 +14,10 @@ export const routes = [
                 element: <Home />
             },
             {
+                path: "/cart",
+                
+            },
+            {
                 path: "*",
                 element: <Error404 />
             },
