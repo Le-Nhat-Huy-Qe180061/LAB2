@@ -1,18 +1,24 @@
-
-import React from 'react'
-import CartItem from './CartItem'
-
-
-
+import React from "react";
+import { useSelector } from "react-redux";
+import CartItem from "./CartItem";
 
 const CartList = () => {
-    return (
-        <>
-            <div className='cart'>
-                <CartItem />
-            </div>
-        </>
-    )
-}
+  const cart = useSelector((state) => state.cartReducer);
 
-export default CartList
+  console.log(cart);
+
+  return (
+    <>
+      <div className="cart_total">
+        Tổng tiền: <span>10000đ</span>
+      </div>
+      <div className="cart">
+        {cart.map((item, _) => (
+          <CartItem item={item} key={item.id} />
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default CartList;
